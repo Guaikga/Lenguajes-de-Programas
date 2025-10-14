@@ -1,10 +1,17 @@
 package main
 
+import (
+	"todolist/tareas"
+)
+
 func main() {
-	tareas := Tareas{}
-	almacenamiento := NuevoAlmacenamiento[Tareas]("tareas.json")
-	almacenamiento.Cargar(&tareas)
-	CmdMsj := NuevoMensajeCmd()
-	CmdMsj.Ejecutar(&tareas)
-	almacenamiento.Guardar(tareas)
+	lista := tareas.Tareas{}
+	almacen := NuevoAlmacenamiento[tareas.Tareas]("tareas.json")
+
+	almacen.Cargar(&lista)
+
+	cmd := NuevoMensajeCmd()
+	cmd.Ejecutar(&lista)
+
+	almacen.Guardar(lista)
 }

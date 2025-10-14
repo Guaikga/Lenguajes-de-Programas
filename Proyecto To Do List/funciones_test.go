@@ -4,51 +4,60 @@ import (
 	"testing"
 	"time"
 
+	"todolist/tareas"
+
 	"github.com/stretchr/testify/assert"
 )
 
 func TestAñadirTarea(t *testing.T) {
-	var tareas Tareas
+	var lista tareas.Tareas
 	titulo := "Estudiar partituras"
 
-	tareas.añadir(titulo)
+	lista.Añadir(titulo)
 
-	assert.Equal(t, 1, len(tareas), "Debe haber una tarea añadida")
-	assert.Equal(t, titulo, tareas[0].Titulo, "El título debe coincidir")
-	assert.Equal(t, Activa, tareas[0].Estado, "El estado inicial debe ser Activa")
-	assert.WithinDuration(t, time.Now(), tareas[0].Inicio, time.Second, "La fecha de inicio debe ser reciente")
-	assert.Nil(t, tareas[0].FinalizadaEn, "FinalizadaEn debe ser nil al inicio")
+	assert.Equal(t, 1, len(lista.Lista))
+	assert.Equal(t, titulo, lista.Lista[0].Titulo)
+	assert.Equal(t, tareas.Activa, lista.Lista[0].Estado)
+	assert.WithinDuration(t, time.Now(), lista.Lista[0].Inicio, time.Second)
+	assert.Nil(t, lista.Lista[0].FinalizadaEn)
 }
 
 func TestEditarTarea(t *testing.T) {
-	tareas := Tareas{
-		{Titulo: "Original", Estado: Activa, Inicio: time.Now()},
+	lista := tareas.Tareas{
+		Lista: []tareas.Tarea{
+			{ID: 1, Titulo: "Original", Estado: tareas.Activa, Inicio: time.Now()},
+		},
+		UltimoID: 1,
 	}
 	nuevoTitulo := "Título editado"
 
-	err := tareas.editar(0, nuevoTitulo)
+	err := lista.Editar(1, nuevoTitulo)
 
-	assert.NoError(t, err, "No debe haber error al editar")
-	assert.Equal(t, nuevoTitulo, tareas[0].Titulo, "El título debe actualizarse")
+	assert.NoError(t, err)
+	assert.Equal(t, nuevoTitulo, lista.Lista[0].Titulo)
 }
 
 func TestEliminarTarea(t *testing.T) {
-	tareas := Tareas{
-		{Titulo: "Tarea 1", Estado: Activa, Inicio: time.Now()},
-		{Titulo: "Tarea 2", Estado: Activa, Inicio: time.Now()},
+	lista := tareas.Tareas{
+		Lista: []tareas.Tarea{
+			{ID: 1, Titulo: "Tarea 1", Estado: tareas.Activa, Inicio: time.Now()},
+			{ID: 2, Titulo: "Tarea 2", Estado: tareas.Activa, Inicio: time.Now()},
+		},
+		UltimoID: 2,
 	}
 
-	err := tareas.eliminar(0)
+	err := lista.Eliminar(1)
 
-	assert.NoError(t, err, "No debe haber error al eliminar")
-	assert.Equal(t, 1, len(tareas), "Debe quedar una sola tarea")
-	assert.Equal(t, "Tarea 2", tareas[0].Titulo, "La tarea restante debe ser la segunda")
+	assert.NoError(t, err)
+	assert.Equal(t, 1, len(lista.Lista))
+	assert.Equal(t, "Tarea 2", lista.Lista[0].Titulo)
+	assert.Equal(t, 2, lista.Lista[0].ID)
 }
 
-func TestEliminarTareaIndexInvalido(t *testing.T) {
-	var tareas Tareas
+func TestEliminarTareaIDInvalido(t *testing.T) {
+	var lista tareas.Tareas
 
-	err := tareas.eliminar(5)
+	err := lista.Eliminar(5)
 
-	assert.Error(t, err, "Debe devolver error si el índice es inválido")
+	assert.Error(t, err)
 }
