@@ -1,0 +1,38 @@
+[
+    {
+        "titulo": "Estudiar Go",
+        "estado": "Activa",
+        "inicio": "2025-10-10T07:20:29.5476742-04:00",
+        "finalizada_en": null
+    },
+    {
+        "titulo": "Estudiar Rust",
+        "estado": "Finalizada",
+        "inicio": "2025-10-11T11:24:43.2362097-04:00",
+        "finalizada_en": "2025-10-11T12:03:37.0135346-04:00"
+    },
+    {
+        "titulo": "Organizar mi escritorio",
+        "estado": "Finalizada",
+        "inicio": "2025-10-11T11:29:06.6624065-04:00",
+        "finalizada_en": "2025-10-11T11:29:17.8190313-04:00"
+    },
+    {
+        "titulo": "Aprender a cocinar",
+        "estado": "Suspendida",
+        "inicio": "2025-10-11T12:01:58.8384756-04:00",
+        "finalizada_en": null
+    },
+    {
+        "titulo": "edicion",
+        "estado": "Activa",
+        "inicio": "2025-10-11T12:20:07.3920193-04:00",
+        "finalizada_en": null
+    },
+    {
+        "titulo": "Esta tarea será cambiada de estado",
+        "estado": "Finalizada",
+        "inicio": "2025-10-11T12:20:23.4861235-04:00",
+        "finalizada_en": "2025-10-11T12:21:31.3415781-04:00"
+    }
+]
