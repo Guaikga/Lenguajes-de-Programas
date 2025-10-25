@@ -1,0 +1,108 @@
+{
+  "lista": [
+    {
+      "id": 1,
+      "titulo": "Estudiar para el examen",
+      "estado": "Suspendida",
+      "inicio": "2025-10-24T11:35:35.174543300-04:00",
+      "finalizada_en": null,
+      "subtareas": [
+        {
+          "id": 4,
+          "titulo": "Practicar Rust",
+          "estado": "Suspendida",
+          "inicio": "2025-10-24T12:17:16.589307200-04:00",
+          "finalizada_en": null,
+          "subtareas": [],
+          "es_subtarea": true,
+          "padre_id": 1,
+          "numero_jerarquico": "1.1"
+        },
+        {
+          "id": 5,
+          "titulo": "Practicar Go",
+          "estado": "Finalizada",
+          "inicio": "2025-10-24T12:17:27.711110700-04:00",
+          "finalizada_en": "2025-10-24T12:20:52.936829600-04:00",
+          "subtareas": [],
+          "es_subtarea": true,
+          "padre_id": 1,
+          "numero_jerarquico": "1.2"
+        }
+      ],
+      "es_subtarea": false,
+      "padre_id": null,
+      "numero_jerarquico": "1"
+    },
+    {
+      "id": 2,
+      "titulo": "Practicar crochet",
+      "estado": "Finalizada",
+      "inicio": "2025-10-24T11:43:49.649734800-04:00",
+      "finalizada_en": "2025-10-25T16:42:31.008481800-04:00",
+      "subtareas": [
+        {
+          "id": 6,
+          "titulo": "Comprar lana",
+          "estado": "Finalizada",
+          "inicio": "2025-10-25T16:41:29.130639200-04:00",
+          "finalizada_en": "2025-10-25T16:42:31.008485100-04:00",
+          "subtareas": [],
+          "es_subtarea": true,
+          "padre_id": 2,
+          "numero_jerarquico": "2.1"
+        },
+        {
+          "id": 7,
+          "titulo": "Comprar aguja",
+          "estado": "Finalizada",
+          "inicio": "2025-10-25T16:42:05.956255900-04:00",
+          "finalizada_en": "2025-10-25T16:42:31.008486700-04:00",
+          "subtareas": [],
+          "es_subtarea": true,
+          "padre_id": 2,
+          "numero_jerarquico": "2.2"
+        }
+      ],
+      "es_subtarea": false,
+      "padre_id": null,
+      "numero_jerarquico": "2"
+    },
+    {
+      "id": 3,
+      "titulo": "Hacer las compras",
+      "estado": "Activa",
+      "inicio": "2025-10-24T12:17:02.863122900-04:00",
+      "finalizada_en": null,
+      "subtareas": [
+        {
+          "id": 8,
+          "titulo": "Comprar verduras",
+          "estado": "Finalizada",
+          "inicio": "2025-10-25T16:42:48.817253700-04:00",
+          "finalizada_en": "2025-10-25T16:43:00.951654600-04:00",
+          "subtareas": [],
+          "es_subtarea": true,
+          "padre_id": 3,
+          "numero_jerarquico": "3.1"
+        },
+        {
+          "id": 9,
+          "titulo": "Comprar carne",
+          "estado": "Activa",
+          "inicio": "2025-10-25T16:43:11.771859800-04:00",
+          "finalizada_en": null,
+          "subtareas": [],
+          "es_subtarea": true,
+          "padre_id": 3,
+          "numero_jerarquico": "3.2"
+        }
+      ],
+      "es_subtarea": false,
+      "padre_id": null,
+      "numero_jerarquico": "3"
+    }
+  ],
+  "ultimo_id": 9,
+  "contador_principal": 3
+}
